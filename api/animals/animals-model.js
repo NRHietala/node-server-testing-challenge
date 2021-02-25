@@ -1,12 +1,5 @@
 const db = require("../../data/dbConfig");
 
-module.exports = {
-  getAll,
-  getById,
-  create,
-  remove,
-};
-
 function getAll() {
   return db("animals");
 }
@@ -23,3 +16,10 @@ async function create(quote) {
 function remove(id) {
   return db("animals").where({ id }).del();
 }
+
+module.exports = {
+  getAll,
+  getById,
+  create,
+  remove,
+};
