@@ -3,6 +3,10 @@ const server = express();
 
 server.use(express.json());
 
+const animalRouter = require("./animals/animals-router");
+
+server.use("/api/animals", animalRouter);
+
 server.get("/", (_, res) => {
   res.send("Is your API running? You should go catch it! 🏃‍♂️");
 });
